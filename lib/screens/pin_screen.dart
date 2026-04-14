@@ -315,7 +315,7 @@ class _PinScreenState extends State<PinScreen>
     );
   }
 
-  void _showForgotPin(BuildContext? ctx) {
+  void _showForgotPin() {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
