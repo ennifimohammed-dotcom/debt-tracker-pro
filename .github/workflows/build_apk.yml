@@ -32,8 +32,10 @@ jobs:
           curl -L -o assets/fonts/Cairo-SemiBold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-SemiBold.ttf
           ls -lh assets/fonts/
 
-      - name: Flutter pub get
-        run: flutter pub get
+      - name: Run flutter pub get
+  working-directory: debt_tracker
+  run: flutter pub get
+
 
       - name: Flutter analyze
         run: flutter analyze --no-fatal-infos
