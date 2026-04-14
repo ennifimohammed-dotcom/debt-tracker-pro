@@ -32,25 +32,29 @@ jobs:
           curl -L -o assets/fonts/Cairo-SemiBold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-SemiBold.ttf
           echo "Fonts downloaded:"
           ls -lh assets/fonts/
+        working-directory: debt-tracker-pro
 
       - name: Flutter pub get
         run: flutter pub get
+        working-directory: debt-tracker-pro
 
       - name: Flutter analyze
         run: flutter analyze --no-fatal-infos
         continue-on-error: true
+        working-directory: debt-tracker-pro
 
       - name: Build APK release
         run: flutter build apk --release
+        working-directory: debt-tracker-pro
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: DebtTrackerPro-v2-APK
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: debt-tracker-pro/build/app/outputs/flutter-apk/app-release.apk
           retention-days: 30
 
       - name: Build summary
         run: |
           echo "✅ APK built successfully!"
-          ls -lh build/app/outputs/flutter-apk/app-release.apk
+          ls -lh debt-tracker-pro/build/app/outputs/flutter-apk/app-release.apk
