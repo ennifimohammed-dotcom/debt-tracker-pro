@@ -26,13 +26,12 @@ jobs:
 
       - name: Download Cairo fonts
         run: |
-          mkdir -p assets/fonts
-          curl -L -o assets/fonts/Cairo-Regular.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Regular.ttf
-          curl -L -o assets/fonts/Cairo-Bold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Bold.ttf
-          curl -L -o assets/fonts/Cairo-SemiBold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-SemiBold.ttf
+          mkdir -p debt-tracker-pro/assets/fonts
+          curl -L -o debt-tracker-pro/assets/fonts/Cairo-Regular.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Regular.ttf
+          curl -L -o debt-tracker-pro/assets/fonts/Cairo-Bold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Bold.ttf
+          curl -L -o debt-tracker-pro/assets/fonts/Cairo-SemiBold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-SemiBold.ttf
           echo "Fonts downloaded:"
-          ls -lh assets/fonts/
-        working-directory: debt-tracker-pro
+          ls -lh debt-tracker-pro/assets/fonts/
 
       - name: Flutter pub get
         run: flutter pub get
