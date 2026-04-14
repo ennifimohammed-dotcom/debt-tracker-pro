@@ -27,12 +27,9 @@ jobs:
       - name: Download Cairo fonts
         run: |
           mkdir -p assets/fonts
-          curl -fsSL "https://github.com/google/fonts/raw/main/ofl/cairo/static/Cairo-Regular.ttf" \
-            -o assets/fonts/Cairo-Regular.ttf
-          curl -fsSL "https://github.com/google/fonts/raw/main/ofl/cairo/static/Cairo-Bold.ttf" \
-            -o assets/fonts/Cairo-Bold.ttf
-          curl -fsSL "https://github.com/google/fonts/raw/main/ofl/cairo/static/Cairo-SemiBold.ttf" \
-            -o assets/fonts/Cairo-SemiBold.ttf
+          curl -L -o assets/fonts/Cairo-Regular.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Regular.ttf
+          curl -L -o assets/fonts/Cairo-Bold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-Bold.ttf
+          curl -L -o assets/fonts/Cairo-SemiBold.ttf https://github.com/google/fonts/raw/main/ofl/cairo/Cairo-SemiBold.ttf
           echo "Fonts downloaded:"
           ls -lh assets/fonts/
 
